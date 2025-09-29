@@ -1,0 +1,65 @@
+# firmware.toml - ESP32 Firmware Download Configuration
+
+[settings]
+# Global settings for firmware downloads
+output_base_dir = "data/firmware"
+download_timeout = 300
+verify_downloads = true
+overwrite_existing = false
+
+# Cardputer Device Configuration
+[devices.cardputer]
+device_name = "cardputer"
+
+[[devices.cardputer.firmware]]
+name = "Marauder"
+version = "latest"
+
+[[devices.cardputer.firmware]]
+name = "Bruce"
+version = "latest"
+
+[[devices.cardputer.firmware]]
+name = "Launcher"
+version = "stable"
+
+[[devices.cardputer.firmware]]
+name = "TV-B-Mine"
+version = "all"
+
+[[devices.cardputer.firmware]]
+name = "NEMO"
+version = "latest"
+
+[[devices.cardputer.firmware]]
+name = "MicroCOM"
+version = "latest"
+
+[[devices.cardputer.firmware]]
+name = "Evil-Cardputer"
+version = "latest"
+
+[[devices.cardputer.firmware]]
+name = "Bus Pirate"
+version = "latest"
+
+# GitHub Releases Configuration
+[[github_releases]]
+name = "Bruce"
+releases_url = "https://github.com/pr3y/Bruce/releases/"
+file_pattern = "*.bin"
+
+[[github_releases]]
+name = "Marauder"
+releases_url = "https://github.com/justcallmekoko/ESP32Marauder/releases/"
+file_pattern = "*.bin"
+
+[[github_releases]]
+name = "M5Stick-NEMO"
+releases_url = "https://github.com/n0xa/m5stick-nemo/releases/"
+file_pattern = "*.bin"
+
+[[github_releases]]
+name = "ESP32-Bus-Pirate"
+releases_url = "https://github.com/geo-tp/ESP32-Bus-Pirate/releases/"
+file_pattern = "*.bin"

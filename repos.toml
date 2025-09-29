@@ -1,0 +1,63 @@
+# SD_Sync Repository Configuration
+
+[settings]
+# Global settings for repository synchronization
+parallel_jobs = 4
+timeout_seconds = 300
+verbose = true
+# Default rsync parameters (can be overridden per repository)
+rsync_args = ["-av", "--delete"]
+# Default files/directories to exclude from rsync (can be overridden per repository)
+rsync_excludes = [".*", ".*/"]
+# Directory containing firmware files to sync (optional)
+firmware_dir = "data/firmware"
+
+[[repositories]]
+name = "uber-flipper"
+url = "https://github.com/UberGuidoZ/Flipper.git"
+branch = "main"
+dest_dir = "data/uber-flipper"
+enabled = true
+# Files/directories to copy with rsync (relative to repo root)
+copy_files = ["Applications/", "BadUSB/", "Infrared/", "Sub-GHz/", "NFC/", "RFID/"]
+# Optional: custom rsync args for this repo (overrides global setting)
+# rsync_args = ["-av", "--delete"]
+# Optional: files/directories to exclude (overrides global setting)
+# rsync_excludes = ["*.tmp", "*.log", ".git"]
+
+[[repositories]]
+name = "uber-irdb"
+url = "https://github.com/UberGuidoZ/Flipper-IRDB.git"
+branch = "main"
+dest_dir = "data/uber-irdb"
+enabled = true
+
+[[repositories]]
+name = "lucas-irdb"
+url = "https://github.com/Lucaslhm/Flipper-IRDB.git"
+branch = "main"
+dest_dir = "data/lucas-irdb"
+enabled = true
+
+[[repositories]]
+name = "badusb"
+url = "https://github.com/I-Am-Jakoby/Flipper-Zero-BadUSB"
+branch = "main"
+dest_dir = "data/badusb"
+enabled = true
+copy_files = ["Payloads/"]
+
+[[repositories]]
+name = "zs-subghz"
+url = "https://github.com/Zero-Sploit/FlipperZero-Subghz-DB.git"
+branch = "main"
+dest_dir = "data/zs-subghz"
+enabled = true
+
+[[repositories]]
+name = "bruce"
+url = "https://github.com/pr3y/Bruce.git"
+branch = "main"
+dest_dir = "data/bruce"
+enabled = true
+copy_files = ["sd_files/"]
